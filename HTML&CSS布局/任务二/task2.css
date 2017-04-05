@@ -1,0 +1,126 @@
+	* {
+	    font-family: "微软雅黑";
+	    margin: 0;
+	    padding:0;   /*清除浏览器所以样式*/
+	}
+	
+	body {
+	    background: rgb(222, 222, 222);
+	    
+	}
+	
+	.box{
+	    background: #fff;
+	    border-left: 0.5px solid #D0D0D0;
+	    border-bottom: 2px solid #878787;
+	    border-right: 2px solid #878787;
+	    border-top: 0.5px solid #D0D0D0;
+	    padding-top: 35px;
+	    padding-right: 20px;
+	    padding-left: 20px;
+	    padding-bottom: 35px;
+	    margin-left: 20px;
+	    margin-right: 20px;
+	}
+	header{
+		background: #333333;
+		position: relative;
+		height: 80px;
+
+	}
+
+	.title {
+	   	position: absolute;
+	   	right: 25px;
+	   	top: 20px;
+
+	}
+	
+	.title ul li{  
+
+		color: black;
+		float: left;
+		
+	}
+	
+	.content1 {
+	    margin-top: 20px;
+	}
+	
+	.content2 {
+	    margin-top: 20px;
+	}
+	
+	.content3 {
+	    margin-top: 20px;
+	}
+	
+	.content4 {
+	    margin-top: 20px;
+	}
+	
+	.content5 {
+	    margin-top: 20px;
+	}
+	
+	h4 {
+	    color: gray;
+	    margin-top: 20px;
+	}
+	
+	p {
+	    font-size: 18px;
+	}
+	
+	caption {
+	    font-weight: bold;
+	    text-align: left;
+	}
+	
+	table {
+	    text-align: left;
+	    border: 1px solid gray;
+	}
+	
+	tr,
+	th {
+	    border: 1px solid gray;
+	}
+	
+	.content {
+	    text-indent: 2em;
+	    line-height: 2em;
+	}
+	
+	.writer {
+	    color: gray;
+	    margin-top: 20px;
+	}
+	
+	.list li {
+	    list-style-type: none;
+	    font-size: 18px;
+	}
+	
+	.list1 li {
+	    font-weight: bold;
+	}
+	
+	.image {
+	    text-align: center;
+	    margin-top: 20px;
+	    margin-left: 60px;
+	    width: 1050px;
+	    border: 1px solid #D0D0D0;
+	}
+	
+	.submit {
+	    width: 100%;
+	    height: 40px;
+	    border-radius: 10px;
+	    background-color: rgb(54, 85, 205);
+	    border-style: none;
+	    color: white;
+	    font-size: 1em;
+	    margin-top: 10px;
+	}

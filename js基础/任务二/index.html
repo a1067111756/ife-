@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>污染城市列表</h3>
+    <ul id="aqi-list">
+
+    </ul>
+
+    <script type="text/javascript">
+
+        //获取对象
+        var aqiData = [
+            ["北京", 90],
+            ["上海", 50],
+            ["福州", 10],
+            ["广州", 50],
+            ["成都", 90],
+            ["西安", 100]
+        ];
+
+/* >>>>>>>>>-------------------------------------------------------------------------------------<<<<<<<<<<<<<<<<<<<<*/
+/**
+ * 第一种解题思路
+ * 1、筛选出值大于60的城市赋值给一个新的数组。
+ * 2、对这个新的数组进行由大到小的排序。
+ * 3、动态创建li标签并打印名次和城市及其空气质量值。
+ */
+
+       (function() {
+
+           //获取列表节点
+           var  ul = document.getElementById("aqi-list");
+
+           //筛选出值大于60的城市赋值给一个新的数组。
+           var  newData = aqiData.filter(data => data[1] >= 60);
+
+           console.log(newData);
+
+          //对这个新的数组进行由大到小的排序。
+           newData.sort(function(x, y){
+              return y[1] - x[1];
+           });
+
+          //动态创建li标签并打印名次和城市及其空气质量值。
+          var i = 0;
+          for (var variable in newData) {
+              i++;
+              var newnode = document.createElement("li");
+              newnode.innerHTML = "第"+i+"名"+": "+newData[variable][0];
+              ul.appendChild(newnode);
+          }
+        })();
+
+
+
+/* >>>>>>>>>-------------------------------------------------------------------------------------<<<<<<<<<<<<<<<<<<<<*/
+
+
+
+
+    </script>
+
+</body>
+
+</html>

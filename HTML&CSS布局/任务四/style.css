@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0
+}
+
+#wrap{
+	height: 200px;
+	width: 400px;
+	background: #CCCCCC;
+	margin: auto auto;
+	position: absolute;  
+  	top: 0; left: 0; bottom: 0; right: 0;  
+}
+#left{
+	height: 50px;
+	width: 50px;
+	background: #FFCC00;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom-right-radius: 50px;
+}
+#right{
+	height: 50px;
+	width: 50px;
+	background: #FFCC00;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border-top-left-radius: 50px;
+
+}

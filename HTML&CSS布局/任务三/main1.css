@@ -1,0 +1,52 @@
+body{
+	margin: 0;
+	padding: 20px;
+}
+.cntainer{
+	background: #eee;
+	border: 1px solid #999;
+	padding: 20px;
+}
+.left{
+	position: absolute;
+	padding: 20px;
+	left: 40px;
+	top: 40px;
+	width: 200px;
+	background: #fff;
+	height: 120px;
+	border: 1px solid #999;
+}
+.left img{
+	height: 80px;
+	width: 80px;
+	border: 1px solid #999;
+}
+.left h4{
+	margin: 0;
+	float: right;
+	margin-right: 20px;
+}
+.content{
+	background: #fff;
+	margin-left: 260px;
+	margin-right: 140px;
+	border: 1px solid #999;
+	padding:20px;
+}
+.right{
+	position: absolute;
+	right: 40px;
+	top: 40px;
+	width: 120px;
+	padding-bottom: 20px;
+	background: #fff;
+	text-align: center;
+	border: 1px solid #999;
+}
+.right img{
+	width: 80px;
+	height: 80px;
+	margin-top: 19px;
+	border: 1px solid #999;
+}

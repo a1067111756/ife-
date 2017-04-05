@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>任务五</title>
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+
+<body>
+    <header>
+        <img class="img_title" src="images/baidu.png" alt="标题">
+        <div>
+            <ul class="title">
+                <li>
+                    <a href="http://www.baidu.com">导航链接一</a></li>
+                <li>
+                    <a href="http://www.baidu.com"> 导航链接二</a></li>
+                <li>
+                    <a href="http://www.baidu.com"> 导航链接三</a></li>
+                <li>
+                    <a id="li" href="http://www.baidu.com"> 导航链接四</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="content">
+        <div class="right">
+            <h3> 这里以后是一个侧栏，这是侧栏标题</h3>
+            <form method="post" action="save.php">
+                <div id="form1">
+                    <label for="name">请输入邮箱地址</label>
+                    <input type="text" name="username" value="这是一个文本输入框" />
+                    <p >邮箱地址请按要求格式输入</p>
+                </div>
+                <div id="form2">
+                    <label for="password" style="margin-left: 32px;">请输入密码</label>
+                    <input type="password" name="password" value="这是一个文本输入框"></input>
+                    <br/>
+                    <label  for="password">请重复输入密码</label>
+                    <input type="password" name="password" value="这是一个文本输入框"></input>
+                    <p>密码请为6-16位英文数字</p>
+                </div>
+                <div id="form3">
+                    <label>性别</label>
+                    <input type="radio" value="1" name="man" checked="checked"></input>
+                    <label>男</label>
+                    <input type="radio" value="2" name="man"></input>
+                    <label>女</label>
+                    <br/>
+                    <br/>
+                    <label>城市</label>
+                    <select>
+                        <option value="北京" selected="selected">北京</option>
+                        <option value="成都">成都</option>
+                        <option value="西安">西安</option>
+                    </select>
+                    <br/>
+                    <br/>
+                    <label>爱好</label>
+                    <span>
+            <input  type="checkbox">运动</input>
+            <input  type="checkbox">科学</input>
+            <input  type="checkbox">读书</input>
+            </span>
+                </div>
+                <div id="form4">
+                    <label >个人描述</label>
+                    <textarea cols="30" rows="10">这是一个多行输入框，输入你的个人描述</textarea>
+                </div>
+            </form>
+            <input class="submit" type="submit" value="确认提交"></input>
+        </div>
+        <div class="left">
+            <div id="content1">
+                <h2>文章一级标题</h2>
+                <h4>文章二级标题</h4>
+                <p class="writer">文章作者 文章发表时间</p>
+                <p class="text">
+                    这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落,这是一个很长的段落, 这是一个很长的段落,这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落,换行了
+                    <br/> 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 换行了
+                    <br/> 这是一个很长的段落, 这是一个很长的段落,
+                    <a href="http:ife.baidu.com">这里有一个链接链接到http:ife.baidu.com</a> 这是一个很长的段落, 这是一个很长的段落, <strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落，这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落。</p>
+                <img src="img.jpg">
+                <p class="text">
+                    这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落,这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落,这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，,换行了
+                    <br/> 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, <strong>这里有个粗字体</strong> 这是一个很长的段落,
+                    <a href="http://ife.baidu.com">这里有个链接点击后打开新窗口到http://ife.baidu.com</a> 这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落，这是一个很长的段落。
+                </p>
+            </div>
+            <div id="content2">
+                <h2>另外一篇文章的标题</h2>
+                <h4>文章二级标题</h4>
+                <p class="writer">文章作者 文章发表时间</p>
+                <p class="text">这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落,这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落,换行了
+                    <br/> 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落,换行了
+                    <br/> 这是一个很长的段落, 这是一个很长的段落,<a href="http:ife.baidu.com">这里有一个链接链接到http:ife.baidu.com</a>这是一个很长的段落, 这是一个很长的段落,<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落，这是一个很长的段落, 这是一个很长的段落, 这是一个很长的段落。</p>
+                <img src="img.jpg">
+                <ul class="list">
+                    <li>列表项目一</li>
+                    <li>列表项目二</li>
+                    <li>列表项目三</li>
+                </ul>
+            </div>
+            <div id="content3">
+                <h2>图片</h2>
+                <div class="image">
+                    <p>好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+                <div class="image">
+                    <p> 好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+                <div class="image">
+                    <p> 好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+                <div class="image">
+                    <p>好看的图片</p>
+                    <img src="images/image1.jpg "></div>
+                <div class="image">
+                    <p>好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+                <br/>
+                <div class="image">
+                    <p>好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+                <div class="image">
+                    <p>好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+                <div class="image">
+                    <p>好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+                <div class="image">
+                    <p>好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+                <div class="image">
+                    <p>好看的图片</p>
+                    <img src="images/image1.jpg"></div>
+            </div>
+            <div id="content4">
+                <h2>最后一篇文章标题</h2>
+                <h4><文章二级标题</h4>
+                <p class="writer">文章作者 文章发表时间</p>
+                <ol class="list1">
+                    <li>排名1</li>
+                    <li>排名2</li>
+                    <li>排名3</li>
+                </ol>
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <caption>下面是一个表格，给表格加了一个border="1"好让你看出是一个表格</caption>
+                    <tr class="table_head">
+                        <th>表头</th>
+                        <th>表头</th>
+                        <th>表头</th>
+                    </tr>
+                    <tr class="table_content">
+                        <th>表内容单元格</th>
+                        <th>表内容单元格</th>
+                        <th><a href="ife.baidu.com">操作</a></th>
+                    </tr>
+                    <tr class="table_content">
+                        <th>表内容单元格</th>
+                        <th>表内容单元格</th>
+                        <th><a href="ife.baidu.com">操作</a></th>
+                    </tr>
+                    <tr class="table_content">
+                        <th>表内容单元格</th>
+                        <th>表内容单元格</th>
+                        <th><a href="ife.baidu.com">操作</a></th>
+                    </tr>
+                    <tr class="table_content">
+                        <th>表内容单元格</th>
+                        <th>表内容单元格</th>
+                        <th><a href="ife.baidu.com">操作</a></th>
+                    </tr>
+                    <tr class="table_footer">
+                        <th>总计</th>
+                        <th colspan="2">1000</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>版权所有@</p>
+        <!-- 垂直居中 -->
+    </footer>
+</body>
+
+</html>
