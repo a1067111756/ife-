@@ -1,0 +1,21 @@
+html, body {
+    padding: 0;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+.aside_nav {
+    height: 100%;
+    width: 30%;
+    float: left;
+    background-color: #00BEA5;
+}
+
+.main_body {
+    height: 100%;
+    width: 65%;
+    padding-left: 5%;
+    float: right;
+    background-color: #EFF1F0;
+}
