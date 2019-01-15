@@ -1,0 +1,157 @@
+html, body, p{
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 10px;
+}
+
+/* 简历居中包裹 */
+.center_wapper {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+
+/* 侧边栏 */
+.aside_nav {
+    width: 78%;
+    float: right;
+    background-color: #EFF1F0;
+    height: 1000px;
+    padding-left: 2%;
+}
+
+
+.aside_nav .aside_title_section .seeker_base_info {
+    font-size: 2.5rem;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.aside_title_section .seeker_name,  .aside_title_section .seeker_job{
+    display: inline-block;
+    color: black;
+    font-size: 2rem;
+}
+
+.aside_title_section .seeker_job{
+    margin-left: 20px;
+}
+
+.aside_personal_section  .title {
+    text-align: left;
+    font-size: 2.5rem;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.aside_personal_section  tbody tr:nth-child(1),
+.aside_personal_section  tbody tr:nth-child(2),
+.aside_personal_section  tbody tr:nth-child(3),
+.aside_personal_section  tbody tr:nth-child(4),
+.aside_personal_section  tbody tr:nth-child(5) {
+    display: inline-block;
+    width: 30%;
+}
+
+.aside_personal_section  tbody td:nth-child(1) {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.aside_personal_section  tbody td:nth-child(2) {
+    font-size: 1.8rem;
+    color: black;
+    padding-left: 20px;
+    
+}
+
+.aside_skills_section table {
+    width: 100%;
+}
+
+.aside_skills_section caption {
+
+    text-align: left;
+    font-size: 2.5rem;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.aside_skills_section  tbody tr:nth-child(1),
+.aside_skills_section  tbody tr:nth-child(2),
+.aside_skills_section  tbody tr:nth-child(3),
+.aside_skills_section  tbody tr:nth-child(4),
+.aside_skills_section  tbody tr:nth-child(5),
+.aside_skills_section  tbody tr:nth-child(6) {
+    display: inline-block;
+    width: 30%;
+}
+
+.aside_skills_section  tbody td:nth-child(1) {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.aside_skills_section  tbody td:nth-child(2) {
+    font-size: 1.8rem;
+    color: black;
+    padding-left: 20px;
+    
+}
+
+.aside_language_section table {
+    width: 100%;
+}
+
+.aside_language_section caption {
+
+    text-align: left;
+    font-size: 2.5rem;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.aside_language_section  tbody tr:nth-child(1) {
+    width: 30%;
+    display: inline-block;
+}
+
+.aside_language_section  tbody td:nth-child(1) {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.aside_language_section  tbody td:nth-child(2) {
+    font-size: 1.8rem;
+    color: black;
+    padding-left: 20px;
+    
+}
+
+
+.main_body {
+    height: 1000px;
+    width: 20%;
+    float: left;
+    background-color: #65A4FA; 
+}
+
+.main_body .resume_title {
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    margin-top: 80px;
+}
