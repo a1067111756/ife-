@@ -1,0 +1,121 @@
+html, body, p{
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    border-width:0px; 
+    border-style:hidden;
+}
+
+/* 简历居中包裹 */
+.center_wapper {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+}
+
+
+/* 侧边栏 */
+.aside_nav {
+    background-color: white;
+}
+
+.aside_title_section {
+    padding: 30px 0;
+    border: 1px solid gray;
+    vertical-align: top;
+}
+
+.aside_title_section .seeker_base_info, 
+.aside_title_section .seeker_name,
+.aside_title_section .seeker_job{
+    display: inline;
+}
+
+.aside_title_section .seeker_base_info {
+    background-color: #D6D6D6;
+    text-align: center;
+    vertical-align: middle;
+    padding: 30px 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.aside_title_section .seeker_name,
+.aside_title_section .seeker_job{
+    margin-left: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+
+.aside_personal_section,
+.aside_skills_section,
+.aside_language_section {
+    padding: 0px 0;
+    border: 1px solid gray;
+}
+
+.aside_personal_section caption,
+.aside_skills_section caption,
+.aside_language_section caption{
+    float: left;
+    padding: 30px 20px;
+    background-color: #D6D6D6;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.aside_personal_section tbody,
+.aside_skills_section tbody,
+.aside_language_section tbody{
+    float: left;
+    margin-top: 10px;
+}
+
+.aside_personal_section  tbody  tr,
+.aside_language_section  tbody  tr,
+.aside_skills_section  tbody  tr {
+    margin-left: 10px;
+    
+    display: inline;
+}
+
+.aside_personal_section  tbody  tr td:nth-child(1),
+.aside_language_section  tbody  tr td:nth-child(1),
+.aside_skills_section  tbody  tr td:nth-child(1){
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.aside_personal_section  tbody  tr td:nth-child(2),
+.aside_language_section  tbody  tr td:nth-child(2),
+.aside_skills_section  tbody  tr td:nth-child(2){
+    font-size: 1.4rem;
+    padding-left: 10px;
+}
+
+.aside_title_section ,
+.aside_personal_section,
+.aside_skills_section    {
+    border-bottom: none;
+}
+
+
+.main_body {
+    background-color: #848484;
+    padding: 15px 15px; 
+}
+
+.main_body .resume_title {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
