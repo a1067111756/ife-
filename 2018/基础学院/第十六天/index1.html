@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="first_number" type="number" value="0">
+    <select id="option_select">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input id="second_number" type="number" value="0">
+    <button id="result_btn">=</button>
+    <p id="result"></p>
+    <script type="text/javascript">
+    
+        document.getElementById('result_btn').onclick = function () {
+
+            var first_number_value = document.getElementById('first_number').value
+            var second_number_value = document.getElementById('second_number').value
+            var option = document.getElementById('option_select').value
+            var result_p = document.getElementById('result')
+            var result;
+
+            switch (option) {
+                case '+':
+                    result = parseInt(first_number_value) + parseInt(second_number_value) 
+                    break;
+                case '-':
+                    result = parseInt(first_number_value) - parseInt(second_number_value) 
+                    break;
+                case '*':
+                    result = parseInt(first_number_value) * parseInt(second_number_value) 
+                    break;
+                case '/':
+                    result = parseInt(first_number_value) / parseInt(second_number_value) 
+                    break;                                                            
+            }
+            console.log(result)
+            result_p.innerHTML = '运算结果: ' + result
+
+        }
+
+
+
+    
+    </script>
+</body>
+</html>

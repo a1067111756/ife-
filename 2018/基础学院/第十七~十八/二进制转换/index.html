@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二进制转换</title>
+    <style>
+        .wapper {
+            vertical-align: middle;
+            text-align: center;
+            margin-top: 400px;
+        }
+
+        input {
+            height: 100px;
+            outline: none;
+            font-size: 24px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 100px;
+        }
+
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }        
+    
+        button {
+            font-size: 24px;
+            outline: none;
+            background-color: blue;
+            border-radius: 10px;
+            padding: 5px 10px;
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 100px;
+        }
+
+        p {
+            font-size: 48px;
+            line-height: 48px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+    </style>
+    <script>
+        function dec2bin () {
+            var first_number = parseInt(document.getElementById('first_number').value)
+            var second_number = document.getElementById('second_number')
+            var bit_number = parseInt(document.getElementById('bit_number').value) 
+
+            var temp = '';
+
+            while (first_number >= 1) {
+                temp += (first_number % 2) 
+                first_number = Math.floor(first_number / 2) 
+            }
+                       
+            temp = temp.split("").reverse().join("")
+            while (temp.length < bit_number) {
+                temp = '0' + temp
+            }
+ 
+            second_number.innerHTML = temp
+        }
+    </script>
+</head>
+<body>
+    <div class="wapper">
+        <input id='first_number' type="number" placeholder="输入一个十进制非负整数">
+        <input id='bit_number' type="number" placeholder="输入转化后二进制数字位数">
+        <button onclick="dec2bin()">转换为二进制</button>
+        <p id="second_number"></p>
+    </div>
+</body>
+</html>

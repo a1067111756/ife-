@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            vertical-align: middle; 
+        }
+
+        p {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            -webkit-transition: color .3s ease-out;
+            -moz-transition: color .3s ease-out;
+            -ms-transition: color .3s ease-out;
+            -o-transition: color .3s ease-out;
+        }
+
+        p:hover {
+           color: brown;
+        }
+
+        p::after{
+            content: ' ';
+            width:0px;
+            height: 3px;
+            display: block;
+            background-color: #0080ff;
+            margin: 0 auto;
+            margin-top:10px;
+            -webkit-transition: width .3s ease-out;
+            -moz-transition: width .3s ease-out;
+            -ms-transition: width .3s ease-out;
+            -o-transition: width .3s ease-out;            
+        }
+
+        p.active::after {
+            width: 100%;
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <p id="text">前端设计</p>
+
+    <script>
+        //jQuery原生js实现----hover事件
+        function hover(ele, over, out) {
+            ele.addEventListener('mouseover', over, false);
+            ele.addEventListener('mouseout', out, false);
+        }
+
+        hover(document.getElementById('text'), function () {
+            var dom = document.querySelector('p');
+            dom.className = 'active';    
+        }, function () {
+            var dom = document.querySelector('p');
+            dom.className = '';
+        });
+   </script>   
+</body>
+</html>

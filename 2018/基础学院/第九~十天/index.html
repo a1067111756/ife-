@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <title>Document</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+        }
+
+        h1, h2, h3, h4, h5, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* header样式 */
+        header {
+            width: 100%;
+            height: 990px;
+            background-image: url('./image/section1/bg_section1.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            text-align: center;
+            border-top: 1px solid transparent;
+        }
+        header .title {
+            color: white;
+            font-size: 4rem;
+            font-weight: normal;
+            margin-bottom: 80px;
+            margin-top: 200px;
+        }
+        header .text {
+            color: white;
+            margin: 0 auto;
+            width: 750px;
+            text-align: center;
+            font-size: 2rem;
+            opacity: .6;
+        }    
+    
+        header .form {
+            display:inline-block;
+            margin-top: 100px;
+            padding: 60px 100px 40px 100px;
+            border: 1px solid rgba(255, 255, 255, .2);
+        }
+
+        header .form .title{
+            color: white;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        header .form .descption{
+            color: white;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.4rem;
+            opacity: .6;
+            margin-top: 15px;
+        }
+
+        header .form .form-main{
+            margin-top: 40px;
+        }
+
+        header .form .form-main .form-input{
+            width: 300px;
+            height: 50px;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, .2);
+            margin-right: 30px;
+            padding-left: 20px;
+            font-size: 1.4rem;
+        }
+
+        header .form .form-main .form-submit{
+            width: 125px;
+            height: 50px;
+            background-color: white;
+            border: none;
+        }
+
+        /* section1样式 */
+        .main-content .section1 {
+            width: 100%;
+            height: 700px;
+            background-color: white;
+        }
+
+        .main-content .section1 hgroup {
+            text-align: center;
+            color: black;
+        }
+
+        .main-content .section1 hgroup .title{
+            font-size: 1.4rem;
+            margin-top: 90px;
+        }
+
+        .main-content .section1 hgroup .descption{
+            width: 700px;
+            margin: 0 auto;
+            margin-top: 45px;
+            font-size: 3.5rem;
+            font-weight: normal;
+        }
+
+        .main-content .section1 .content-wapper{
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 70px;
+        }
+
+        .main-content .section1 .content-wapper .content-item {
+            display: inline-block;
+        }
+
+        .main-content .section1 .content-wapper .content-item:nth-child(1) img{         
+            width: 50px;
+            height: 50px;              
+            background-size: 30px 49px;
+        }
+        .main-content .section1 .content-wapper .content-item:nth-child(2) img{
+            width: 50px;
+            height: 50px;
+            background-size: 40px 37px;
+            margin-left: 100px;
+        }
+        .main-content .section1 .content-wapper .content-item:nth-child(3) img{
+            width: 50px;
+            height: 50px;
+            background-size: 50px 49px;
+        }
+        .main-content .section1 .content-wapper .content-item:nth-child(4) img{
+            width: 50px;
+            height: 50px;   
+            background-size: 50px 42px;
+            margin-left: 100px;
+        }
+
+        .main-content .section1 .content-wapper .text{
+            margin-left: 25px;
+        }  
+
+        .main-content .section1 .content-wapper .text,
+        .main-content .section1 .content-wapper img {
+            display: inline-block;
+        }
+
+        .main-content .section1 .content-wapper .title {
+            color: black;
+            font-size: 1.4rem;
+        }
+
+        .main-content .section1 .content-wapper .descption {
+            width: 360px;
+            color: black .6;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+
+        /* section-2样式 */
+        .main-content .section2 {
+            width: 100%;
+            height: 800px;
+            background-image: url('./image/section3/bg_section.png');
+            background-repeat: no-repeat;
+            background-size: 100% 800px;
+            overflow: auto;    
+            box-sizing: content-box;    
+        }
+        .main-content .section2 .left {
+            float: left;
+            box-sizing: border-box;
+            margin-left: 310px;
+            margin-top: 180px; 
+        }
+        
+        .main-content .section2 .left p{
+            width: 370px;
+        }
+        .main-content .section2 .left .title{
+            color: white;
+            font-size: 4rem;
+            font-weight: normal;
+        }
+        .main-content .section2 .left .descption{
+            color: white;
+            font-size: 1.8rem;
+            opacity: .6;
+            margin-top: 45px;
+            font-weight: normal;
+        }
+
+        .main-content .section2 .left .but-wapper {
+            margin-top: 55px;
+        }
+
+        .main-content .section2 .left .but-wapper button{
+            width: 240px;
+            height: 55px;
+            border: none;
+            box-sizing: content-box;
+        }        
+
+        .main-content .section2 .left .but-wapper button:nth-child(1){
+            background-color: white;
+        }
+
+        .main-content .section2 .left .but-wapper button:nth-child(2){
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, .2);
+            margin-left: 30px;
+        }
+
+        .main-content .section2 .left .but-wapper .but1{
+            width: 240px;
+            height: 60px;
+        }
+
+        .main-content .section2 .right {
+            float: right;
+        }        
+
+        .main-content .section2 .right .ipad {
+            width: 650px;
+            height: 600px;
+            margin-top: 100px;
+            background-image: url('./image/section3/bg_ipad.png')
+            
+        }      
+
+        /* section-3样式 */
+        .main-content .section3 {
+            width: 100%;
+            height: 580px;
+            background-color: white;
+            box-sizing: border-box;
+            border-bottom: 1px solid gray;
+        }        
+        .main-content .section3 article {
+            box-sizing: border-box;
+            margin-top: 200px;
+            padding: 0 320px;         
+        }
+        .main-content .section3 article .article-title{
+            color: black;
+            font-size: 3rem;
+            text-align: center;
+        }
+        .main-content .section3 article .article-content{
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            align-items: center;   
+            margin-top: 100px;
+        }
+        .main-content .section3 article .article-content section {
+            box-sizing: border-box;
+            padding: 0 50px;
+            text-align: center;
+        }   
+        .main-content .section3 article .article-content section p:nth-child(1){
+            font-size: 2.8rem;
+        }  
+        .main-content .section3 article .article-content section p:nth-child(2){
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 260px;
+            color: black;
+            opacity: .6;
+            font-size: 1.6rem;
+            word-wrap: break-word;
+            word-break: break-all;
+        }  
+
+        /* section-4样式 */
+        .main-content .section4 {
+            width: 100%;
+            height: 950px;
+            background-color: white;
+            box-sizing: border-box;
+            border-bottom: 1px solid gray;
+            padding: 70px 450px;
+        }  
+
+        .main-content .section4 ul{
+            box-sizing: border-box;
+            
+        } 
+
+        .main-content .section4 ul li{
+            list-style: none;
+            overflow: hidden;
+        } 
+        .main-content .section4 ul li .left{
+            float: left;
+        } 
+        .main-content .section4 ul li .right{
+            float: right;
+       
+        }   
+        .main-content .section4 ul li:nth-child(2){
+            margin-top: 80px;
+        }                 
+        .main-content .section4 ul li img{
+            width: 570px;
+            height: 350px;
+        }  
+        .main-content .section4 ul li .text{
+            width: 310px;
+        }              
+        .main-content .section4 ul li .text p:nth-child(1){
+            font-size: 1.8rem;
+        }    
+        .main-content .section4 ul li .text p:nth-child(2){
+            font-size: 1.5rem;
+            opacity: .6;
+            margin-top: 30px;
+        }  
+
+        /* section-5样式 */
+        .main-content .section5 {
+            width: 100%;
+            height: 1100px;
+            background-color: white;
+            box-sizing: border-box;
+            border-bottom: 1px solid gray;
+            padding: 100px 310px;
+        }  
+        .main-content .section5 .text{
+            text-align: center;
+        }
+
+        .main-content .section5 .text p:nth-child(1){
+             font-size: 2.8rem;           
+        }
+        .main-content .section5 .text p:nth-child(2){
+            font-size: 1.5rem;
+            opacity: .6;  
+            width: 700px;
+            margin: 0 auto; 
+            margin-top: 30px;        
+        }
+
+        .main-content .section5 .image-list{
+            width: 1000px;
+            display: grid;
+            grid-template-columns:repeat(2,1fr);
+            grid-column-gap: 60px;
+            grid-row-gap: 60px;           
+            align-items: center;
+            margin: 0 auto;
+            margin-top: 60px;
+        }
+        
+        /* 外层包裹图片进行裁剪 */
+        .main-content .section5 .image-wrapper {
+            width: 470px;
+            height: 340px;
+            overflow:hidden;
+            position: relative;            
+        }
+
+        .main-content .section5 .image-wrapper img{
+            width: 470px;
+        }        
+
+        .main-content .section5 .image-wrapper .cover{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:470px;
+            height:340px;
+            background:rgb(0,0,0); 
+            opacity: 0.65;
+        }  
+
+        .main-content .section5 .image-wrapper .dec {
+            position: absolute;
+            top: 0;
+            left: 0;            
+            width: 470px;
+            height: 340px;
+            color: white;
+            text-align: center;
+        }
+
+        .main-content .section5 .image-wrapper .dec p:nth-child(1){
+            margin-top: 110px;
+            font-size: 2rem;
+        }
+        .main-content .section5 .image-wrapper .dec p:nth-child(2){
+            font-size: 1.2rem;
+            margin-top: 20px;
+            opacity: .6;
+        }  
+        .main-content .section5 .image-wrapper .dec .icon-wrapper {
+            margin-top: 30px;
+
+        }           
+        .main-content .section5 .image-wrapper .dec .icon-wrapper i{
+            font-size: 4rem;
+            color: white;   
+            margin: 0 15px;    
+        }
+
+        /* section-6样式 */
+        .main-content .section6 {
+            width: 100%;
+            height: 700px;
+            background-color: white;
+            box-sizing: border-box;
+            padding: 70px 0;
+            position: relative;
+            overflow: hidden;
+        }  
+
+        .main-content .section6 .content-wrapper {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .main-content .section6 .left {
+            width: 470px;
+            height: 560px;
+            box-sizing: border-box;
+            padding: 50px;
+            float: left;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+        } 
+        .main-content .section6 .left p{
+            font-size: 1.8rem;
+            color: black;
+        }  
+        .main-content .section6 .left input:nth-child(1),
+        .main-content .section6 .left input:nth-child(2),
+        .main-content .section6 .left input:nth-child(3),
+        .main-content .section6 .left input:nth-child(4) {
+            margin-top: 30px;
+            box-sizing: border-box;
+        }
+
+        .main-content .section6 .left input:nth-child(1) {
+            margin-top: 45px;
+        }
+
+        .main-content .section6 .left input:nth-child(1),
+        .main-content .section6 .left input:nth-child(2) {
+            width: 370px;
+            height: 50px;
+            padding-left: 25px;
+            font-size: 1.4rem;
+        }  
+
+        .main-content .section6 .left input:nth-child(3) {
+            width: 370px;
+            height: 145px;
+            padding-left: 25px;
+            font-size: 1.4rem;
+            vertical-align: top;
+        }
+
+        .main-content .section6 .left input:nth-child(4) {
+            width: 370px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            border: none;
+        }        
+
+        .main-content .section6 .right {
+            width: 470px;
+            height: 560px;
+            box-sizing: border-box;
+            margin-left: 530px;
+            padding-left: 90px;
+            padding-top: 90px;
+        }  
+
+        .main-content .section6 .right > p:nth-child(1){
+            font-size: 3rem;
+        }  
+
+        .main-content .section6 .right > p:nth-child(2){
+            width: 350px;
+            margin-top: 40px;
+            font-size: 1.4rem;
+            color: black;
+            opacity: 0.6;
+        }     
+
+        .main-content .section6 .right .icon-text {
+            margin-top: 30px;
+        }
+
+        .main-content .section6 .right .icon-text.first {
+            margin-top: 70px;
+        }
+
+        .main-content .section6 .right .icon-text span{
+            display: inline-block;
+            color: black;
+            font-size: 2rem;
+            line-height: 2rem;
+            vertical-align: middle;
+        }
+
+        .main-content .section6 .right .icon-text p{
+            display: inline-block;
+            color: black;
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+            margin: 0;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        footer {
+            height: 410px;
+            width: 100%;
+            background-color: #141414;
+            box-sizing: border-box;
+            padding: 80px 210px;
+            display: flex;
+            justify-content: space-between
+             
+        }
+
+        footer  ul {
+            width: 200px;
+            padding: 0;
+            margin: 0;
+        }    
+   
+
+        footer ul li{
+            list-style: none;
+            color: white;
+            opacity: .6;
+            font-size: 12px;
+            margin-top: 35px;
+            line-height: 20px;
+        }     
+
+        footer ul li:nth-child(1){
+            font-size: 16px;
+            margin-top: 0px;  
+            opacity: 1;          
+        }                  
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Hello World</h1>
+        <p class="text">China is speeding up strategic plan, standards, traffic rules, laws and regulations on accident-incurred liabilitiesfor its smart car industry, Economic Information Daily reported Thursday.</p>
+        <div class="form">
+            <h2 class="title">Create Your Account</h2>
+            <p class="descption">It is absolutely free</p>
+            <div class="form-main">
+                <input placeholder="denis@getcraftwork.com" type="text" class="form-input username"/>
+                <input placeholder="Create your password" type="text" class="form-input password"/>
+                <input type="submit" class="form-submit" value="SIGN UP"/>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <section class="section1">
+            <hgroup>
+                <h3 class="title">Boatloads of Awesome</h3>
+                <h1 class="descption">Ready-made, customizable, HTML landing page sections</p>
+            </hgroup>
+            <div class="content-wapper">
+                <div class="content-item">
+                    <img src="./image//section2/icon_phone.png" alt="">
+                    <div class="text">
+                        <h3 class="title">Mobile First</h3>
+                        <p class="descption">All modulz are built mobile-first for maximum device compatibil</p>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <img src="./image//section2/icon_check.png" alt="">
+                    <div class="text">
+                        <h3 class="title">Accessibility</h3>
+                        <p class="descption">Support for IE8, mobile and tablet devices, screenreaders and c</p>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <img src="./image//section2/icon_pencil.png" alt="">
+                    <div class="text">
+                        <h3 class="title">Fluid Typography</h3>
+                        <p class="descption">On different screen sizes, fonts automagically scale with the v</p>
+                    </div>
+                </div>
+                <div class="content-item">
+                    <img src="./image//section2/icon_setting.png" alt="">
+                    <div class="text">
+                        <h3 class="title">Customization</h3>
+                        <p class="descption">Make any design your own using the Style Editor. Personalize fo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="left">
+                <p class="title">Supportive policies for China's smart car</p>
+                <p class="descption">China will come up with its own smart car standards, traffic rules, laws and regulations relating to safety, according to the China Industry Innovation Alliance for the Intelligent and Connected Vehicles.</p>
+                <div class="but-wapper">
+                    <button class="but_1">Check out Features</button>
+                    <button class="but_2">Try product for Free</button>
+                </div>
+            </div>
+            <div class="right">
+                <div class="ipad"></div>  <!--如果使用img标签出现白框问题-->
+            </div>
+        </section>
+        <section class="section3">
+            <article>
+                <p class="article-title">Try Our Awesome Products</p>
+                <div class="article-content">
+                    <section class="article-item">
+                        <p>Singleton</p>
+                        <p>Li Jun, a China Academy of Engineering academician and also director of the alliance's experts' committee, said
+                            that China will also launch design guidance for smart cars, smart map architecture and standards for test
+                            grounds.</p>
+                    </section>
+                    <section class="article-item">
+                        <p>Hero</p>
+                        <p>Li said the smart car industry is able to enlarge the current car industry by 1 trillion yuan ($158.15 billion)
+                            and also able to boost fast development in 5G, internet of cars, big data, artificial intelligence and
+                            new-energy vehicles.</p>
+                    </section>
+                    <section class="article-item">
+                        <p>Portland</p>
+                        <p>Zhang Junyi, a partner with NIO Capital, said that the smart car is the trend for the car industry and China's
+                            auto sector will usher in a new key development stage with the improvement of infrastructure, technology,
+                            policies and laws.</p>
+                    </section>
+                </div>
+            </article>
+        </section>
+        <section class="section4">
+            <ul>
+                <li>
+                    <div class="left">
+                        <img src="./image/section4/img1.png" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="text">
+                            <p>Learn How to Improve Your Personal Business</p>
+                            <p>Li Jun, a China Academy of Engineering academician and also director of the alliance's experts' committee, said that China will also launch design guidance for smart cars, smart map architecture and standards for test grounds.</p>
+                        </div>
+                    </div>
+    
+             </li>
+                <li>
+                    <div class="left">
+                        <div class="text">
+                            <p>Choose Between Two Beautifully Designed Color Schemes.</p>
+                            <p>China will come up with its own smart car standards, traffic rules, laws and regulations relating to safety, according to the China Industry Innovation Alliance for the Intelligent and Connected Vehicles.</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img src="./image/section4/img2.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="section5">
+            <div class="text">
+                <p>Our Awesome Crew</p>
+                <p>Our unique online teaching style makes learning easy everyone.Where you are trying to land a new job.brush up on your skills.</p>
+            </div>
+            <div class="image-list">
+                <div class="image-wrapper">
+                    <img src="./image/section5/img1.png" alt="">
+                    <div class="cover"></div>
+                    <div class="dec">
+                        <p>Ethan Dutton</p>
+                        <p>Senior Visual Designer</p>
+                        <div class="icon-wrapper">
+                            <i class="iconfont icon-face-book"></i>
+                            <i class="iconfont icon-twitter"></i>
+                            <i class="iconfont icon-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="./image/section5/img2.png" alt="">
+                </div>
+                <div class="image-wrapper">
+                    <img src="./image/section5/img3.png" alt="">
+                </div>
+                <div class="image-wrapper">
+                    <img src="./image/section5/img4.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="section6">
+            <div class="content-wrapper">
+                <div class="left">
+                    <p>Fell free to Write Us</p>
+                    <form action="">
+                        <input type="text" placeholder="E-mail"></input>
+                        <input type="text" placeholder="Subject"></input>
+                        <input type="text" placeholder="Message"></input>
+                        <input type="submit"></input>
+                    </form>
+                </div>
+                <div class="right">
+                    <p>Contacts</p>
+                    <p>Make any design your own using the Style Editor. Personalize fonts, colors, and layouts to create the custom look you want.</p>
+                    <div class="icon-text first">
+                        <span class="iconfont icon-didian"></span>
+                        <p>360 King Street Feastrvale Trevose, PA 19057</p>
+                    </div>
+                    <div class="icon-text">
+                        <span class="iconfont icon-weibiaoti"></span>
+                        <p>(755) 564-84-12</p>
+                    </div>
+                    <div class="icon-text">
+                        <span class="iconfont icon-youxiang"></span>
+                        <p>youname@mail.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <ul>
+            <li>Learn More</li>
+            <li>How it works?</li>
+            <li>Meeting tools</li>
+            <li>Live streaming</li>
+            <li>Contact method</li>
+        </ul>
+        <ul>
+            <li>About Us</li>
+            <li>How it works?</li>
+            <li>Meeting tools</li>
+            <li>Live streaming</li>
+            <li>Contact method</li>
+        </ul>
+        <ul>
+            <li>Support</li>
+            <li>F.A.Q.</li>
+            <li>Contact us</li>
+            <li>Live chat</li>
+            <li>Phone call</li>
+        </ul>
+        <ul>
+            <li>Enjoy your Life</li>
+            <li>Great web UI kit for designers, freelancers or business.</li>
+        </ul>
+    </footer>
+</body>
+</html>

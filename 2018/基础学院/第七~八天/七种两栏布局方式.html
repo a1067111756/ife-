@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            padding: 15px 20px;
+            border: 1px dashed #ff6c60;
+        }
+        .left {
+            width: 120px;
+            border: 5px solid #ddd;
+        }
+        .right {
+            margin-left: 20px;
+            border: 5px solid #ddd;
+        }
+
+
+        /* 1. 双inline-block方案
+        这种方法是通过width: calc(100% - 140px)来动态计算右侧盒子的宽度。需要知道右侧盒子距离左边的距离，以及左侧盒子具体的宽度(content+padding+border)，以此计算父容器宽度的100%需要减去的数值。同时，还需要知道右侧盒子的宽度是否包含border的宽度。
+        在这里，为了简单的计算右侧盒子准确的宽度，设置了子元素的box-sizing:border-box;以及父元素的box-sizing: content-box;。
+        同时，作为两个inline-block的盒子，必须设置vertical-align来使其顶端对齐。
+        另外，为了准确地应用计算出来的宽度，需要消除div之间的空格，需要通过设置父容器的font-size: 0;,或者用注释消除html中的空格等方法。
+        缺点:
+
+        需要知道左侧盒子的宽度，两个盒子的距离，还要设置各个元素的box-sizing
+
+        需要消除空格字符的影响
+
+        需要设置vertical-align: top满足顶端对齐。
+
+        // font-size: 0;    消除空格的影响
+        // vertical-align: top;    顶端对齐
+       
+        .wrapper{
+            box-sizing: content-box;
+            font-size: 0;    
+        }
+
+        .left,
+        .right {
+            display: inline-block;
+            vertical-align: top;    
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .right {
+            width: calc(100% - 140px);
+        }
+        */
+    
+        /* 2. 双float方案 
+        本方案和双float方案原理相同，都是通过动态计算宽度来实现自适应。但是，由于浮动的block元素在有空间的情况下会依次紧贴，排列在一行，所以无需设置display: inline-block;，自然也就少了顶端对齐，空格字符占空间等问题。
+
+        A floated box is shifted to the left or right until its outer edge touches the containing block edge or the outer edge of another float.
+
+        不过由于应用了浮动，父元素需要清除浮动。
+        缺点:
+
+        需要知道左侧盒子的宽度，两个盒子的距离，还要设置各个元素的box-sizing。
+
+        父元素需要清除浮动。
+
+
+        //overflow: hidden;       清除浮动
+        
+        .wrapper {
+            overflow: auto;        
+            box-sizing: content-box;
+        }
+
+        .wrapper .left,
+        .wrapper .right {
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .wrapper .right {
+            width: calc(100% - 140px);
+        }
+        */
+
+        /* float+margin-left方案
+        上面两种方案都是利用了CSS的calc()函数来计算宽度值。下面两种方案则是利用了block级别的元素盒子的宽度具有填满父容器，并随着父容器的宽度自适应的流动特性。
+        但是block级别的元素都是独占一行的，所以要想办法让两个block排列到一起。
+        我们知道，block级别的元素会认为浮动的元素不存在，但是inline级别的元素能识别到浮动的元素。这样，block级别的元素就可以和浮动的元素同处一行了。
+        为了让右侧盒子和左侧盒子保持距离，需要为左侧盒子留出足够的距离。这个距离的大小为左侧盒子的宽度以及两个盒子之间的距离之和。然后将该值设置为右侧盒子的margin-left。
+        缺点：
+
+        需要清除浮动
+
+        需要计算右侧盒子的 margin-left
+
+        .wrapper {
+            overflow: hidden;      
+        }
+
+        .wrapper .left {
+            float: left;
+        }
+
+        .wrapper .right {
+            margin-left: 150px;
+        }
+        */
+
+        /* 使用float+BFC方法
+        这个方案同样是利用了左侧浮动，但是右侧盒子通过overflow: auto;形成了BFC，因此右侧盒子不会与浮动的元素重叠。
+
+        an element in the normal flow that establishes a new block formatting context (such as an element with 'overflow' other than 'visible') must not overlap the margin box of any floats in the same block formatting context as the element itself。
+
+        这种情况下，只需要为左侧的浮动盒子设置margin-right，就可以实现两个盒子的距离了。而右侧盒子是block级别的，所以宽度能实现自适应。
+        缺点:
+
+        父元素需要清除浮动 
+        .wrapper {
+            overflow: auto;
+        }
+
+        .wrapper .left {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .wrapper .right {
+            margin-left: 0;
+            overflow: auto;
+        }
+        */
+
+
+        /* flex方案 
+        flex可以说是最好的方案了，代码少，使用简单。有朝一日，大家都改用现代浏览器，就可以使用了。
+        需要注意的是，flex容器的一个默认属性值:align-items: stretch;。这个属性导致了列等高的效果。
+        为了让两个盒子高度自动，需要设置: align-items: flex-start;
+        .wrapper {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .wrapper .left {
+            flex: 0 0 auto;
+        }
+
+        .wrapper .right {
+            flex: 1 1 auto;
+        }
+        */
+
+        /* grid方案
+        grid布局也有列等高的默认效果。需要设置: align-items: start;。
+        grid布局还有一个值得注意的小地方和flex不同:在使用margin-left的时候，grid布局默认是box-sizing设置的盒宽度之间的位置。而flex则是使用两个div的border或者padding外侧之间的距离。
+         
+        .wrapper {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            align-items: start;
+        }
+
+        .wrapper .left,
+        .wrapper .right {
+            box-sizing: border-box;
+        }
+
+        .wrapper .left {
+            grid-column: 1;
+        } 
+
+        .wrapper .right {
+            grid-column: 2;
+        }
+        */ 
+
+        /*
+        极限情况
+        最后可以再看一下在父容器极限小的情况下，不同方案的表现。主要分成四种情况：
+
+        动态计算宽度的情况
+
+        两种方案: 双inline-block方案和双float方案。宽度极限小时，右侧的div宽度会非常小，由于遵循流动布局，所以右侧div会移动到下一行。
+
+        动态计算右侧margin-left的情况
+
+        两种方案: float+margin-left方案和absolute+margin-left方案。宽度极限小时，由于右侧的div忽略了文档流中左侧div的存在，所以其依旧会存在于这一行，并被隐藏。
+
+        float+BFC方案的情况
+
+        这种情况下，由于BFC与float的特殊关系，右侧div在宽度减小到最小后，也会掉落到下一行。
+
+        flex和grid的情况
+
+        这种情况下，默认两种布局方式都不会放不下的div移动到下一行。不过 flex布局可以通过 flex-flow: wrap;来设置多余的div移动到下一行。 grid布局暂不支持。
+
+        */
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="left">
+            左边固定宽度，高度不固定 </br> </br></br></br>高度有可能会很小，也可能很大。
+        </div>
+        <div class="right">
+            这里的内容可能比左侧高，也可能比左侧低。宽度需要自适应。</br>
+            基本的样式是，两个div相距20px, 左侧div宽 120px
+        </div>
+    </div>
+</body>
+</html>
+
