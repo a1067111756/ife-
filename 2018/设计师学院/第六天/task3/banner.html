@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="./banner.css">
+</head>
+<body>
+    <div class="container">
+        <div class="picture-wrapper">
+            <div  id="large-picture-wrapper">
+                <img src="./img/img1.jpg"  id="img2">
+            </div>
+            <ul class="thumbnail-picture-wrapper">
+                <li><img src="./img/img1.jpg" alt="" onclick="switchPicture(1)"></li>
+                <li><img src="./img/img2.jpg" alt="" onclick="switchPicture(2)"></li>
+                <li><img src="./img/img3.jpg" alt="" onclick="switchPicture(3)"></li>
+                <li><img src="./img/img4.jpg" alt="" onclick="switchPicture(4)"></li>
+                <li><img src="./img/img5.jpg" alt="" onclick="switchPicture(5)"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function switchPicture (id) {
+            var pictrueWrapper = document.getElementById('large-picture-wrapper')
+            pictrueWrapper.innerHTML = '<img src="./img/img' + id + '.jpg" class="slider'+ id + '"' +'>'
+        }
+    </script>
+</body>
+</html>

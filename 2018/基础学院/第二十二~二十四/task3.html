@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>去掉字符串空格</title>
+</head>
+<body>
+    <script>
+        /*
+        实现一个字符串头尾去除空格的函数
+        注意需要去除的空格，包括全角、半角空格
+        暂时不需要学习和使用正则表达式的方式
+        */
+        function diyTrim(str) {
+
+            // do something
+            // 去除前空格
+            var i = 0;
+            while (true) {
+                if (str[i] === ' ') {
+                    i++
+                } else if (str[i] === '　') {
+                    i += 2
+                } else {
+                    break
+                }
+            }
+
+            str = str.substring(i)
+            
+            // 去除后空格
+            var j = str.length
+            while (true) {
+                if (str[j - 1] === ' ') {
+                    j--
+                } else if (str[j - 1] === '　') {
+                    j -= 2
+                } else {
+                    break
+                }
+            }
+            str = str.substring(0, j)
+            
+            return str
+        }
+        
+
+        //  trim的作用就是去除字符串前后的空格包括全角和半角
+        function diyTrim(str) {
+           return str.trim()
+        }
+        
+
+        // 测试用例
+        /*
+        console.log(diyTrim(' a f b    ')); // ->a f b
+        console.log(diyTrim('    ffdaf    ')); // ->ffdaf
+        console.log(diyTrim('1    ')); // ->1
+        console.log(diyTrim('　　f')); // ->f
+        console.log(diyTrim('  　  a f b 　　 ')); // ->a f b
+        console.log(diyTrim(' ')); // ->
+        console.log(diyTrim('　')); // ->
+        console.log(diyTrim('')); // ->
+        */
+       
+
+        /*
+        去掉字符串str中，连续重复的地方
+        */
+       
+        function removeRepetition(str) {
+            var result = "";
+            
+            var i = 0
+            var flag
+            while (true) {
+                if (i >= str.length) {
+                    break
+                }
+            
+                flag = str[i]
+                while (flag === str[i + 1]) {
+                    str = str.substring(0, i) + str.substring(i + 2, str.length)
+                    console.log(str)
+                }
+
+                i++;
+            }
+            // do something
+
+            return str;
+        }
+
+        // 测试用例
+        //console.log(removeRepetition("aaa")); // ->a
+        //console.log(removeRepetition("abbba")); // ->aba
+        console.log(removeRepetition("aabbaabb")); // ->abab
+        //console.log(removeRepetition("")); // ->
+        //console.log(removeRepetition("abc")); // ->abc
+        
+    </script>
+</body>
+</html>

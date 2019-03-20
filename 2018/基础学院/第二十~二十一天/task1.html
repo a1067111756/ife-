@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="name" type="text">
+    <button id="submit-btn" onclick="submitName()">Submit</button>
+    <script>
+        var submit = document.getElementById('submit-btn')
+        var inputBox = document.getElementById('name')
+        
+        /* 静态绑定 */
+        function submitName() {
+            var name = document.getElementById('name')
+            alert(name.value)
+        }     
+        
+
+        /* 动态绑定 */
+        inputBox.onkeypress = function (e) {
+            
+            if (e.keyCode === 108 || e.keyCode === 13) {
+                var name = document.getElementById('name')
+                alert(name.value)
+            }
+        }
+
+        
+
+        /* 事件管理器绑定 */
+        inputBox.addEventListener('onkeypress', function () {
+            if (e.keyCode === 27) {
+                document.getElementById('name').innerHTML = ''
+            }
+        })
+        
+
+    </script>    
+</body>
+</html>

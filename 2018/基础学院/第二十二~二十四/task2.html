@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>String A:
+            <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+        </label>
+        <textarea id="str-a"></textarea>
+        <label>String B:
+            <input id="radio-b" type="radio" name="str-obj" value="b">
+        </label>
+        <textarea id="str-b"></textarea>
+        <label>Num A：<input id="num-a" type="number" value="0"></label>
+        <label>Num B：<input id="num-b" type="number" value="1"></label>
+    </div>
+    <div>
+        <button id="1th">获取当前选中输入的内容长度</button>
+        <button id="2th">当前选中输入中的第3个字符</button>
+        <button id="3th">把两个输入框的文字连接在一起输出（concat）</button>
+        <button id="4th">输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+        <button id="5th">输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+        <button id="6th">使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+        <button id="7th">当前选中输入框的行数</button>
+        <button id="8th">使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+        <button id="9th">把所选输入框中的内容全部转为大写</button>
+        <button id="10th">把所选输入框中的内容全部转为小写</button>
+        <button id="11th">把所选输入框中内容的半角空格全部去除</button>
+        <button id="12th">把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+    </div>
+    <p id="result"></p>
+    <script>
+        var stringA = document.getElementById("str-a")
+        var stringB = document.getElementById("str-b")
+        var numberA = document.getElementById("num-a")
+        var numberB = document.getElementById("num-b")
+        var radioA = document.getElementById("radio-a")
+        var radioB = document.getElementById("radio-b")    
+        
+        var getStrLengthBnt = document.getElementById("1th")
+        var get3thCharofStrBnt = document.getElementById("2th")
+        var concatStrBnt = document.getElementById("3th")
+        var firstDisAppearBnt = document.getElementById("4th")
+        var lastDisAppearBnt = document.getElementById("5th")
+        var sliceBnt = document.getElementById("6th")
+        var RowsBnt = document.getElementById("7th")
+        var subStrBnt = document.getElementById("8th")
+        var upperBnt = document.getElementById("9th")
+        var lowerBnt = document.getElementById("10th")
+        var removeHalfSpaceBnt = document.getElementById("11th")
+        var replaceABnt = document.getElementById("12th")
+
+        getStrLengthBnt.onclick = function () {
+            var length;
+            if (radioA.checked) {
+                length = stringA.value.length
+                alert("选中字符串长度为为: " + length)
+            } else if (radioB.checked) {
+                length = stringB.value.length
+                alert("选中字符串长度为为: " + length)
+            } else {
+                alert("请选中输入框")
+            }            
+        }
+
+        get3thCharofStrBnt.onclick = function () {
+            var char3th;
+            if (radioA.checked) {
+                char3th = stringA.value.charAt(2)
+                alert("选中字符串第三个字符为: " + char3th)
+            } else if (radioB.checked) {
+                char3th = stringB.value.charAt(2)
+                alert("选中字符串第三个字符为: " + char3th)
+            } else {
+                alert("请选中输入框")
+            }
+        }   
+        
+        concatStrBnt.onclick = function () {
+            if (stringA.value == "" && stringB.value == "") {
+                alert("输入框不能为空")
+                return
+            }
+
+            alert("连接输入框的字符串为: " + stringA.value.concat(stringB.value))
+        }      
+        
+        firstDisAppearBnt.onclick = function () {
+            if (stringA.value == "" || stringB.value == "") {
+                alert("输入框不能为空")
+                return
+            }
+
+            var index = stringA.value.indexOf(stringB.value)
+            
+            if (index == -1) {
+                alert("B输入框的内容不存在于A输入框");
+            } else {
+                alert("B输入框内容第一次出现位置是: " + (index + 1));
+            }
+        }
+
+        lastDisAppearBnt.onclick = function () {
+            if (stringA.value == "" || stringB.value == "") {
+                alert("输入框不能为空")
+                return
+            }
+
+            var index = stringA.value.lastIndexOf(stringB.value)
+
+            if (index == -1) {
+                alert("B输入框的内容不存在于A输入框");
+            } else {
+                alert("B输入框内容最后一次出现位置是: " + (index + 1));
+            }
+        }       
+        
+        
+        sliceBnt.onclick = function () {
+            var content;
+            if (radioA.checked) {
+                if (numberA.value == "" || numberB.value == "") {
+                    alert("请填写完整slice参数")
+                    return
+                }
+                
+                if (numberA.value < 0 ||  numberB.value > stringA.value.length) {
+                    alert("slice参数超出范围")
+                }
+
+                content = stringA.value.slice(parseInt(numberA.value), parseInt(numberB.value))
+                alert("slice字符串为: " + content)
+            } else if (radioB.checked) {
+                if (numberA.value == "" || numberB.value == "") {
+                    alert("请填写完整slice参数")
+                    return
+                }
+
+                if (numberA.value < 0 || numberB.value > stringA.value.length) {
+                    alert("slice参数超出范围")
+                }
+
+                content = stringB.value.slice(parseInt(numberA.value), parseInt(numberB.value))
+                alert("slice字符串为: " + content)
+            } else {
+                alert("请选中输入框")
+            }            
+        }
+
+        // 貌似有问题
+        RowsBnt.onclick = function () {
+            var rows;
+            if (radioA.checked) {
+                rows = stringA.value.split(/\r?\n/).length
+                alert("选中输入框行数为: " + rows)
+            } else if (radioB.checked) {
+                char3th = stringB.value.split(/\r?\n/).length
+                alert("选中输入框行数为: " + rows)
+            } else {
+                alert("请选中输入框")
+            }
+        }
+
+        subStrBnt.onclick = function () {
+            var content;
+            if (radioA.checked) {
+                if (numberA.value == "" || numberB.value == "") {
+                    alert("请填写完整slice参数")
+                    return
+                }
+                content = stringA.value.substr(numberA.value, numberB.value)
+                alert("substr字符串为: " + content)
+            } else if (radioB.checked) {
+                content = stringB.value.substr(numberA.value, numberB.value)
+                alert("substr字符串为: " + content)
+            } else {
+                alert("请选中输入框")
+            }            
+        }
+
+        upperBnt.onclick = function () {
+            var content;
+            if (radioA.checked) {
+                content = stringA.value.toUpperCase()
+                alert("字符串转换为大写: " + content)
+            } else if (radioB.checked) {
+                content = stringB.value.toUpperCase()
+                alert("字符串转换为大写: " + content)
+            } else {
+                alert("请选中输入框")
+            }
+        }
+
+        lowerBnt.onclick = function () {
+            var content;
+            if (radioA.checked) {
+                content = stringA.value.toLowerCase()
+                alert("字符串转换为小写: " + content)
+            } else if (radioB.checked) {
+                content = stringB.value.toLowerCase()
+                alert("字符串转换为小写: " + content)
+            } else {
+                alert("请选中输入框")
+            }
+        }
+
+        removeHalfSpaceBnt.onclick = function () {
+            var content;
+            if (radioA.checked) {
+                content = stringA.value.replace(/(^\s*)/g, "")
+                alert("字符串去掉半角空格: " + content)
+            } else if (radioB.checked) {
+                content = stringB.value.replace(/(^\s*)/g, "")
+                alert("字符串去掉半角空格: " + content)
+            } else {
+                alert("请选中输入框")
+            }
+        }
+
+        replaceABnt.onclick = function () {
+            var content;
+            if (radioA.checked) {
+                content = stringA.value.replace("a", stringB.value)
+                alert("替换后的字符串: " + content)
+            } else if (radioB.checked) {
+                content = stringB.value.replace("a", stringA.value)
+                alert("替换后的字符串: " + content)
+            } else {
+                alert("请选中输入框")
+            }
+        }        
+
+    </script>
+</body>
+</html>

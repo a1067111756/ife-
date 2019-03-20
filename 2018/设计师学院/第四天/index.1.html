@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+
+        
+        .wapper {
+            width: 300px;
+            height: 450px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -225px;
+            transform-style: preserve-3d;  /* 决定其子元素是否在3d空间内 */
+            transform-origin: center;
+            transition: transform 1s;
+        }
+
+        .wapper .img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 300px;
+            height: 450px;
+            border-radius: 10px;
+        }
+
+        .wapper:hover {
+            transform: rotateY(180deg)
+        }
+
+        .front {
+            z-index: 2;
+            /* backface-visibility determines whether the back face of an element is visible when turned towards the user. */
+            /* 所以当card转过去的时候, .fornt就隐藏了, 就看见了.back */            
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden; /* Chrome 和 Safari */
+            -moz-backface-visibility: hidden;    /* Firefox */
+            -ms-backface-visibility:hidden; 	 /* Internet Explorer */                
+        }
+
+        .back {
+            z-index: 1;
+        }        
+           
+    </style>
+</head>
+<body>
+    <div class="wapper">
+        <img src="./positive.jpg" alt="正面" class="img front">
+        <img src="./negative.jpg" alt="反面" class="img back"> 
+    </div>
+</body>
+</html>

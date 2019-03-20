@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Number A:<input id="radio-a" type="radio" name="math-obj" value="a"></label><input id="num-a" type="text">
+        <label>Number B:<input id="radio-b" type="radio" name="math-obj" value="b"></label><input id="num-b" type="text">
+    </div>
+    <div>
+        <button id="1th">判断当前选中的输入框输入内容是否为数字</button>
+        <button id="2th">把 A 四舍五入为 B 个小数位数的数字</button>
+        <button id="3th">当前选中数字的绝对值</button>
+        <button id="4th">对当前选中的数字进行上舍入</button>
+        <button id="5th">对当前选中的数字进行下舍入</button>
+        <button id="6th">把当前选中的数字四舍五入为最接近的整数</button>
+        <button id="7th">返回 A 和 B 中的最高值</button>
+        <button id="8th">返回 A 和 B 中的最低值</button>
+    </div>
+    <p id="result"></p>
+    <script type="text/javascript">
+        var inputA = document.getElementById("num-a")  
+        var inputB = document.getElementById("num-b")
+        var radioA = document.getElementById("radio-a")
+        var radioB = document.getElementById("radio-b")
+
+        var isNumberBtn = document.getElementById("1th")
+        var fixedBtn = document.getElementById("2th")
+        var absoluteValueBtn = document.getElementById("3th")
+        var ceilBtn = document.getElementById("4th")
+        var floorBtn = document.getElementById("5th")
+        var roundBtn = document.getElementById("6th")
+        var maxBtn = document.getElementById("7th")
+        var minBtn = document.getElementById("8th")
+
+        isNumberBtn.onclick = function () {
+            if (radioA.checked) {
+                var textA = inputA.value
+                if (isNaN(parseInt(textA))) {
+                    alert("A输入框输入的值不是数字")
+                } else {
+                    alert("A输入框输入的值是数字")
+                }                
+            } else if (radioB.checked) {
+                var textB = inputB.value
+                if (isNaN(parseInt(textB))) {
+                    alert("B输入框输入的值不是数字")
+                } else {
+                    alert("B输入框输入的值是数字")
+                }  
+            } else {
+                alert("请选中输入框")
+            }
+        }
+
+        fixedBtn.onclick = function () {
+            var textA = inputA.value
+            var textB = inputB.value
+            if (textA.value == "" || textB.value == "") {
+                alert("输入框不能为空")
+                return
+            }
+            
+            var result = parseFloat(textA).toFixed(parseInt(textB))
+            alert("四舍五入值为: " + result)
+        }
+
+        absoluteValueBtn.onclick = function () {
+            if (radioA.checked) {
+                var textA = Math.abs(inputA.value) 
+                alert("绝对值为: " + textA)
+            } else if (radioB.checked) {
+                var textB = Math.abs(inputB.value)
+                alert("绝对值为: " + textB)
+            } else {
+                alert("请选中输入框")
+            }
+        }        
+
+        ceilBtn.onclick = function () {
+            if (radioA.checked) {
+                var textA = Math.ceil(inputA.value)
+                alert("向上四舍五入为: " + textA)
+            } else if (radioB.ceil) {
+                var textB = Math.abs(inputB.value)
+                alert("向上四舍五入为: " + textB)
+            } else {
+                alert("请选中输入框")
+            }
+        }
+
+        floorBtn.onclick = function () {
+            if (radioA.checked) {
+                var textA = Math.floor(inputA.value)
+                alert("向下四舍五入为: " + textA)
+            } else if (radioB.ceil) {
+                var textB = Math.floor(inputB.value)
+                alert("向下四舍五入为: " + textB)
+            } else {
+                alert("请选中输入框")
+            }
+        }
+
+        roundBtn.onclick = function () {
+            if (radioA.checked) {
+                var textA = Math.round(inputA.value)
+                alert("向下四舍五入为: " + textA)
+            } else if (radioB.ceil) {
+                var textB = Math.round(inputB.value)
+                alert("向下四舍五入为: " + textB)
+            } else {
+                alert("请选中输入框")
+            }
+        }   
+
+        maxBtn.onclick = function () {
+            var textA = inputA.value
+            var textB = inputB.value
+            if (textA.value == "" || textB.value == "") {
+                alert("输入框不能为空")
+                return
+            }
+
+            var result =  Math.max(parseFloat(textA), parseFloat(textB))
+            alert("A B中较大数是: " + result)
+        }
+
+        minBtn.onclick = function () {
+            var textA = inputA.value
+            var textB = inputB.value
+            if (textA.value == "" || textB.value == "") {
+                alert("输入框不能为空")
+                return
+            }
+
+            var result = Math.min(parseFloat(textA), parseFloat(textB))
+            alert("A B中较小数是: " + result)
+        }        
+        
+    </script>
+</body>
+</html>
